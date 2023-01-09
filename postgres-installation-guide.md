@@ -33,8 +33,10 @@ source ~/.bashrc
 1. Initialize the database storage with ```initdb``` command of postgres. You can dedicate a data directory using -D option.
 ```bash
 $ initdb -D /home/lbh/test_data
+$ initdb --encoding=UTF-8 --no-locale --username=root --pgdata=/home/lbh/test_data
 ```
-2. Start the database server with logfile.
+
+2. Start the database server with logfile. You can modify the configurations with ```postgresql.conf``` file inside a data directory.
 ```bash
 $ pg_ctl -D /home/lbh/test_data -l logfile start
 ```
@@ -43,7 +45,6 @@ $ pg_ctl -D /home/lbh/test_data -l logfile start
 ```bash
 $ pg_ctl -D /home/lbh/test_data -m smart stop
 ```
-
 
 ## References
 - https://github.com/meeeejin/til/blob/master/postgresql/installation-from-source-code.md
