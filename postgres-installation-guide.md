@@ -55,3 +55,4 @@ $ pg_ctl -D /home/lbh/test_data -m smart stop
 ## References
 - https://github.com/meeeejin/til/blob/master/postgresql/installation-from-source-code.md
 - https://www.postgresql.org/docs/11/installation.html
+- https://github.com/hundredbag/til/blob/master/Databases/PostgreSQL/psql_install_init.md
