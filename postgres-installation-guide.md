@@ -2,7 +2,7 @@
 This installation guide is limited to linux environment.
 
 ## Installation Procedures
-0. Create a user
+0. Create a user and login to postgres account. If you are using separate devices for data and log storage, you need to mount them to ```/home/postgres/``` as well.
 ```bash
 $ adduser postgres
 $ su - postgres
@@ -22,15 +22,15 @@ $ tar -xvzf postgresql-9.4.5.tar.gz
 ```bash
 $ cd postgresql-9.4.5
 $ mkdir build
-$ ./configure --prefix=/home/lbh/postgresql-9.4.5/build
+$ ./configure --prefix=/home/postgres/postgresql-9.4.5/build
 $ make -j install
 ```
 
 4. Then add the shared library path to ```~/.bashrc```. Then apply the change.
 ```bash
 vim ~/.bashrc
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/lbh/postgresql-9.4.5/build/lib
-export PATH=/home/lbh/postgresql-9.4.5/build/bin:$PATH
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/postgres/postgresql-9.4.5/build/lib
+export PATH=/home/postgres/postgresql-9.4.5/build/bin:$PATH
 
 source ~/.bashrc
 ```
@@ -38,18 +38,18 @@ source ~/.bashrc
 ## How to Start PostgreSQL Server
 1. Initialize the database storage with ```initdb``` command of postgres. You can dedicate a data directory using -D option.
 ```bash
-$ initdb -D /home/lbh/test_data
-$ initdb --encoding=UTF-8 --no-locale --username=root --pgdata=/home/lbh/test_data
+$ initdb -D /home/postgres/test_data
+$ initdb --encoding=UTF-8 --no-locale --username=root --pgdata=/home/postgres/test_data
 ```
 
 2. Start the database server with logfile. You can modify the configurations with ```postgresql.conf``` file inside a data directory.
 ```bash
-$ pg_ctl -D /home/lbh/test_data -l logfile start
+$ pg_ctl -D /home/postgres/test_data -l logfile start
 ```
 
 3. End the database server.
 ```bash
-$ pg_ctl -D /home/lbh/test_data -m smart stop
+$ pg_ctl -D /home/postgres/test_data -m smart stop
 ```
 
 ## References
