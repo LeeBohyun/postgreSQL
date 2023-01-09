@@ -2,6 +2,12 @@
 This installation guide is limited to linux environment.
 
 ## Installation Procedures
+0. Create a user
+```bash
+$ adduser postgres
+$ su - postgres
+```
+
 1. Download the source code from the postgreSQL [website](https://www.postgresql.org/ftp/source/).
 ```bash
 $ wget https://ftp.postgresql.org/pub/source/v9.4.5/postgresql-9.4.5.tar.gz
