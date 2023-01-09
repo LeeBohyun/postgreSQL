@@ -41,7 +41,7 @@ $ pg_ctl -D /home/lbh/test_data -l logfile start
 
 3. End the database server.
 ```bash
-$ pg_ctl -D /home/lbh/test_data r -m smart stop
+$ pg_ctl -D /home/lbh/test_data -m smart stop
 ```
 
 
