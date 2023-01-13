@@ -34,6 +34,14 @@ export PATH=/home/postgres/postgresql-9.4.5/build/bin:$PATH
 
 source ~/.bashrc
 ```
+Also add the shared library to ```.profile``` of postgres user.
+```bash
+$ cd ~
+$ vim .profile
+PATH=$PATH:/home/postgres/postgresql-9.4.5/build/bin
+export PATH
+$ . ~/.profile
+```
 
 ## How to Start PostgreSQL Server
 1. Initialize the database storage with ```initdb``` command of postgres. You can dedicate a data directory using -D option.
