@@ -66,6 +66,7 @@ postgres=# \q
 ```bash
 $ pg_ctl -D /home/postgres/test_data -m smart stop
 ```
++ You can also configure postgres configurations via ``` postgresql.conf``` in the data directory.
 
 ## References
 - https://github.com/meeeejin/til/blob/master/postgresql/installation-from-source-code.md
