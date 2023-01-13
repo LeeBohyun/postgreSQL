@@ -46,8 +46,23 @@ $ initdb --encoding=UTF-8 --no-locale --username=root --pgdata=/home/postgres/te
 ```bash
 $ pg_ctl -D /home/postgres/test_data -l logfile start
 ```
+3. Create/drop USER and table examples:
+```bash
+$ psql
+postgres=# \du
+                             List of roles
+ Role name |                   Attributes                   | Member of 
+-----------+------------------------------------------------+-----------
+ postgres  | Superuser, Create role, Create DB, Replication | {tpcc}
+ tpcc      |                                                | {}
+postgres=# DROP DATABASE tpcc;
+DROP DATABASE
+postgres=# DROP USER tpcc;
+DROP ROLE
+postgres=# \q
+```
 
-3. End the database server.
+4. End the database server.
 ```bash
 $ pg_ctl -D /home/postgres/test_data -m smart stop
 ```
